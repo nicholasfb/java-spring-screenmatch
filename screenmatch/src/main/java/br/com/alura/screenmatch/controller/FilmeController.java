@@ -25,11 +25,9 @@ public class FilmeController {
         return "filmes/listagem";
     }
     @PostMapping
-    public String cadastraFilme(DadosCadastroFilme dados) {
+    public String cadastraFilme(DadosCadastroFilme dados, Model model) {
         var filme = new Filme(dados);
         filmes.add(filme);
-
-        System.out.println(filmes);
-        return "filmes/formulario";
+        return "redirect:/filmes";
     }
 }
